@@ -22,7 +22,7 @@ var addUserInfo = function(req, res) {
 
 var addConfigs = function(req, res){
 	configs[req.body.name] = req.body.configs;
-	res.send({status : true});
+	res.send({status : true,configs : req.body.configs});
 }
 
 var submitTimeCard = function(req, res){

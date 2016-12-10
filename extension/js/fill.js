@@ -1,9 +1,14 @@
 var onLoad  = function(){
 	$('#fill').click(function(){
-		var data = {hours : 8};
+		var data = {name : localStorage.getItem('tw_user_name')};
+
 		$.post('http://localhost:8000/timecardEntry/submit',data,function(data, status){
 			if(data.status){
-				alert('Submitted!!!!');
+				$('#tbl').remove();
+				$('body').html('<h1 align="center">Submitted Succesfully</h1><button id="close">close</button>');
+				$('#close').click(function(){
+					window.close();
+				})
 			}
 		});
 	});
