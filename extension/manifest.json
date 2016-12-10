@@ -14,7 +14,10 @@
   "default_popup": "html/login.html"
   },
   "background": {
-  "scripts": ["js/background.js"]
+  "scripts": ["lib/jquery-3.1.1.min.js",
+    "js/actions.js",
+    "js/saveConfig.js",
+    "js/fill.js"]
   },
   "permissions": [
     "storage",

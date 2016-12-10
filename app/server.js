@@ -2,7 +2,7 @@
 var http = require('http');
 var controller = require('./lib/controller');
 
-var PORT = 4000;
+var PORT = 8000;
 
 var server = http.createServer(function(req,res){
 	return controller(req,res);

@@ -19,10 +19,25 @@ var addUserInfo = function(req, res) {
 }
 
 
+var addConfigs = function(req, res){
+	configs[req.body.name] = req.body.configs;
+	res.send({status : true});
+}
+
+var submitTimeCard = function(req, res){
+
+	var data = req.body; // data has projectName, subProject, and Location;
+	console.log(data);
+	res.send({status : true});
+}
+
 app.use(express.static('./public'));
 app.use(bodyParser.urlencoded({ extended: true}));
 
+
 app.post('/timeCardEntry/creds', addUserInfo);
+app.post('/timecardEntry/config',addConfigs);
+app.post('/timecardEntry/submit',submitTimeCard);
 
 module.exports = function(req, res) {
 	app(req, res);
