@@ -1,6 +1,7 @@
 const os = require('os');
 
 var OurThoughtWorks = require('./lib/ThoughtWorksLogin');
+var SalesForce = require('./lib/SalesForce');
 var conf = require('../private/configs');
 
 
@@ -23,13 +24,18 @@ var driver = new webdriver.Builder()
 
 var ourThoughtWorks = new OurThoughtWorks(driver);
 
-//Keep the user saved
-// .setID('abc');
-
 ourThoughtWorks
     .open()
     .setID(conf.user)
     .setPassword(conf.password)
     .login();
 
-// driver.close();
+var salesForce = new SalesForce(ourThoughtWorks.driver);
+
+salesForce
+    .gotoTimecards()
+    .newEntry()
+    .copyFromPreviousWeek();
+
+driver.sleep(100000);
+driver.close();
