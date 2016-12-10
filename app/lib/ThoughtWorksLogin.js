@@ -15,10 +15,10 @@ ThoughtWorksLogin.prototype = {
     },
 
     setID: function (id) {
-        var elementName = 'username';
-        this.driver.wait(until.elementLocated(By.name(elementName)), 5000);
-        this.driver.findElement(By.name(elementName)).sendKeys('');
-        this.driver.findElement(By.name(elementName)).sendKeys(id);
+        var elementName = By.name('username');
+        this.driver.wait(until.elementLocated(elementName), 5000);
+        this.driver.findElement(elementName).sendKeys('');
+        this.driver.findElement(elementName).sendKeys(id);
         return this;
     },
 

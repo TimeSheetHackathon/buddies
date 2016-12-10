@@ -3,4 +3,6 @@ app/node_modules
 extension/node_modules
 .idea/
 node_modules
+private/configs.js
+
 npm-debug.log
