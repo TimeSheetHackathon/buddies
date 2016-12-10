@@ -28,14 +28,10 @@ var enterTimecard = function (driver, conf) {
     driver.close();
 }
 
-module.exports = function (conf) {
-
-
-
+module.exports = function (cradencial ,conf) {
     var chromeOptions = new chrome.Options();
     var user = os.homedir();
     var user_data_dir = '%u/Library/Application\ Support/Google/Chrome/Default'.replace('%u', user);
-
     chromeOptions.addArguments("user-data-dir=%p".replace('%p', user_data_dir));
 
     var driver = new webdriver.Builder()
@@ -44,5 +40,5 @@ module.exports = function (conf) {
         .setChromeOptions(chromeOptions)
         .build();
 
-    enterTimecard(driver, conf);
+    enterTimecard(driver, cradencial);
 }

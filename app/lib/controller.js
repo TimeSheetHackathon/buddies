@@ -28,8 +28,8 @@ var addConfigs = function(req, res){
 var submitTimeCard = function(req, res){
 	var data = req.body;
 	var user = users[data.name]
-	console.log(data);
-	submitTimeSheet(user);
+    var confs = configs[data.name]
+	submitTimeSheet(user, confs);
 	res.send({status : true});
 }
 
