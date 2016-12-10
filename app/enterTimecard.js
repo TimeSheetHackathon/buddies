@@ -3,8 +3,8 @@ var enterTimecard = function (driver, conf) {
 
     ourThoughtWorks
         .open()
-        .setID(conf.user)
-        .setPassword(conf.password)
+        .setID(conf.name)
+        .setPassword(conf.pwd)
         .login();
 
     var salesForce = new SalesForce(ourThoughtWorks.driver);

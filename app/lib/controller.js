@@ -1,5 +1,6 @@
 var express = require('express');
 var bodyParser = require('body-parser');
+var submitTimeSheet = require('../enterTimecard');
 var app = express();
 var users = {};
 var configs = {};
@@ -25,9 +26,10 @@ var addConfigs = function(req, res){
 }
 
 var submitTimeCard = function(req, res){
-
-	var data = req.body; // data has projectName, subProject, and Location;
+	var data = req.body;
+	var user = users[data.name]
 	console.log(data);
+	submitTimeSheet(user);
 	res.send({status : true});
 }
 
