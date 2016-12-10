@@ -7,7 +7,7 @@
 </head>
 
 <body>
-<table>
+<table id="tbl">
   <tr>
     <th>Assignment</th>
     <th>Sub-Project</th>
@@ -21,7 +21,7 @@
     <th>Saturday</th>
     <th>Sunday</th>
   </tr>
-  <tr>
+  <tr id="row-1">
     <td><select>
       <option>BIAL</option>
       <option>Data Analytics</option>
@@ -49,11 +49,14 @@
     <td><input type="text" value="8"></input></td>
     <td><input type="text" value="8"></input></td>
     <td><input type="text" value="8"></input></td>
-    <td><input type="text" value="8"></input></td>
+    <td><input type="text" value="0"></input></td>
   </tr>
 </table>
+<button id="add" >Add Row</button>
 <button id="fill">Sumbit</button>
 <script type="text/javascript" src="../lib/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="../js/addOptions.js"></script>
 <script type="text/javascript" src="../js/fill.js"></script>
+
 </body>
 </html>
