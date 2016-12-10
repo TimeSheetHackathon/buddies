@@ -1,7 +1,8 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
-var users = {}
+var users = {};
+var configs = {};
 
 app.post('/fill', function(req, res) {
 	var data = req.body()
@@ -10,9 +11,11 @@ app.post('/fill', function(req, res) {
 
 var addUserInfo = function(req, res) {
 	var info = req.body;
-	if(!users.hasOwnProperty(info.name))
+	if(!users.hasOwnProperty(info.name)){
 		users[info.name] = {name: info.name, pwd: info.psw};
-	res.send({added : true});
+		configs[info.name] = undefined;
+	}
+	res.send({hasDefault : configs[info.name] != undefined});
 }
 
 
