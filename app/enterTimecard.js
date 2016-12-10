@@ -1,3 +1,13 @@
+var OurThoughtWorks = require('./lib/ThoughtWorksLogin');
+const os = require('os');
+var SalesForce = require('./lib/SalesForce');
+
+var webdriver = require('selenium-webdriver'),
+    chrome = require('selenium-webdriver/chrome'),
+    By = require('selenium-webdriver').By,
+    until = require('selenium-webdriver').until;
+
+
 var enterTimecard = function (driver, conf) {
     var ourThoughtWorks = new OurThoughtWorks(driver);
 
@@ -19,15 +29,8 @@ var enterTimecard = function (driver, conf) {
 }
 
 module.exports = function (conf) {
-    const os = require('os');
 
-    var OurThoughtWorks = require('./lib/ThoughtWorksLogin');
-    var SalesForce = require('./lib/SalesForce');
 
-    var webdriver = require('selenium-webdriver'),
-        chrome = require('selenium-webdriver/chrome'),
-        By = require('selenium-webdriver').By,
-        until = require('selenium-webdriver').until;
 
     var chromeOptions = new chrome.Options();
     var user = os.homedir();
