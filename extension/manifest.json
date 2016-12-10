@@ -5,16 +5,16 @@
   "content_scripts": [
   {
     "matches": ["<all_urls>"],
-    "js": ["jquery-3.1.1.min.js","content.js"]
+    "js": ["lib/jquery-3.1.1.min.js","js/content.js"]
   }
 ],
   "browser_action": {
-  "default_icon": "tw.png",
+  "default_icon": "img/tw.png",
   "default_title": "Missing Sheets",
-  "default_popup": "entrySheet.html"
+  "default_popup": "html/entrySheet.html"
   },
   "background": {
-  "scripts": ["background.js"]
+  "scripts": ["js/background.js"]
   },
   "permissions": [
     "cookies",
