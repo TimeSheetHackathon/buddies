@@ -5,7 +5,7 @@ var onLoad  = function(){
 		$.post('http://localhost:8000/timecardEntry/submit',data,function(data, status){
 			if(data.status){
 				$('#tbl').remove();
-				$('body').html('<h1 align="center">Submitted Succesfully</h1><button id="close">close</button>');
+				$('body').html('<h1 align="center">Request sent successfully</h1><button id="close">close</button>');
 				$('#close').click(function(){
 					window.close();
 				})
