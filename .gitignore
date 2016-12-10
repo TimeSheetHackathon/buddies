@@ -3,3 +3,4 @@ app/node_modules
 extension/node_modules
 .idea/
 node_modules
+npm-debug.log
