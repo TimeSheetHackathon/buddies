@@ -1,5 +1,8 @@
+body{
+	font-family: sans-serif;
+	font-size: 10px;
+}
 table {
-    font-family: sans-serif;
     border-collapse: collapse;
     margin: 5px;
 }
